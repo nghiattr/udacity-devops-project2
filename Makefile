@@ -1,18 +1,18 @@
 setup:
-	python3 -m venv ~/.flask-ml-azure
-	#source ~/.flask-ml-azure/bin/activate
+	python -m venv flask-ml-azure
+	source flask-ml-azure/Scripts/activate
 	
 install:
 	pip install -r requirements.txt
 
 test:
-	#python -m pytest -vv --cov=myrepolib tests/*.py
-	#python -m pytest --nbval notebook.ipynb
+	python -m pytest -v test.py
 
+start:
+	python app.py
 
 lint:
-	#hadolint Dockerfile #uncomment to explore linting Dockerfiles
-	pylint --disable=R,C,W1203,W0702 app.py
+	pylint app.py --disable=missing-docstring
 
 docker-build:
 	docker build -t my-python-flask-app .
@@ -30,5 +30,3 @@ docker-clean:
 	if [ -n "$$(docker images -aq)" ]; then \
 		docker rmi -f $$(docker images -aq); \
 	fi
-
-all: install lint test
