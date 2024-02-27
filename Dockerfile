@@ -1,20 +1,18 @@
-# Use the official Python image as the base image
-FROM python:3.8-slim
+FROM python:3.7.3-stretch
 
-# Set the working directory
+# Working Directory
 WORKDIR /app
 
-# Copy the requirements file into the container
-COPY requirements.txt .
+# Copy source code to working directory
+COPY . app.py /app/
 
-# Install the required packages
-RUN pip install --no-cache-dir -r requirements.txt
+# Install packages from requirements.txt
+# hadolint ignore=DL3013
+RUN pip install --upgrade pip &&\
+    pip install --trusted-host pypi.python.org -r requirements.txt
 
-# Copy the rest of the application code and the model file into the container
-COPY . .
+# Expose port 80
+EXPOSE 80
 
-# Expose the port the app will run on
-EXPOSE 5000
-
-# Define the command to start the application
+# Run app.py at container launch
 CMD ["python", "app.py"]

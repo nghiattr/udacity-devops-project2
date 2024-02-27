@@ -1,32 +1,16 @@
 setup:
-	python -m venv flask-ml-azure
-	source flask-ml-azure/Scripts/activate
-	
+	python3 -m venv ~/.udacity-devops
+
 install:
-	pip install -r requirements.txt
+    pip install -r requirements.txt
 
 test:
-	python -m pytest -v test.py
+	#python -m pytest -vv --cov=myrepolib tests/*.py
+	#python -m pytest --nbval notebook.ipynb
 
-start:
-	python app.py
 
 lint:
-	pylint app.py --disable=missing-docstring
+	#hadolint Dockerfile #uncomment to explore linting Dockerfiles
+	pylint --disable=R,C,W1203 app.py
 
-docker-build:
-	docker build -t my-python-flask-app .
-
-docker-run:
-	docker run -p 5000:5000 my-python-flask-app
-
-docker-debug:
-	#to debug inside the container
-	docker run -d -p 5000:5000 --name my-flask-container my-python-flask-app
-	docker exec -it my-flask-container bash
-
-docker-clean:
-	#remove all images locally
-	if [ -n "$$(docker images -aq)" ]; then \
-		docker rmi -f $$(docker images -aq); \
-	fi
+all: install lint test
