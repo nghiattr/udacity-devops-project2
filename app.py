@@ -1,11 +1,17 @@
 from flask import Flask, request, jsonify
 from sklearn.ensemble import RandomForestRegressor
-import json
+
+# Your code continues here...
+
 
 app = Flask(__name__)
 
 # Load your trained machine learning model
 model = RandomForestRegressor()  # Example model, replace with your own
+
+@app.route('/')
+def index():
+    return 'Hello, World!'
 
 @app.route('/predict', methods=['POST'])
 def predict():
