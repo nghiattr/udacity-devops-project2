@@ -9,17 +9,17 @@ trigger:
   - "none"
 
 pool:
-  name: asd
+  name: nghiapool
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureServiceConnectionId: '26092ada-a424-46bb-873c-f20043cd4d5d'
+  azureServiceConnectionId: 'nghiaConnection'
   
   # Web app name
-  webAppName: 'salmon-sky-a53b725b001a4c1cbf0406a5233f3aa9'
+  webAppName: 'flask-nghia'
 
   # Environment name
-  environmentName: 'flask-ml-service'
+  environmentName: 'flask-nghia-udacity'
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
@@ -33,7 +33,7 @@ stages:
   jobs:
   - job: BuildJob
     pool:
-      name: asd
+      name: nghiapool
     steps:
     - task: UsePythonVersion@0
       inputs:
@@ -79,7 +79,7 @@ stages:
   jobs:
   - deployment: DeploymentJob
     pool:
-      name: asd
+      name: nghiapool
     environment: $(environmentName)
     strategy:
       runOnce:
@@ -92,7 +92,7 @@ stages:
             displayName: 'Use Python version'
 
           - task: AzureWebApp@1
-            displayName: 'Deploy Azure Web App : flask-ml-service'
+            displayName: 'Deploy Azure Web App : flask-nghia-udacity'
             inputs:
               azureSubscription: $(azureServiceConnectionId)
               appName: $(webAppName)
