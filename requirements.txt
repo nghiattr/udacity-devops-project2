@@ -26,4 +26,4 @@ tomlkit==0.12.4
 typing-extensions==4.10.0
 werkzeug==3.0.1
 zipp==3.17.0
-sklearn
+scikit-learn
