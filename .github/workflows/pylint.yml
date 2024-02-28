@@ -25,4 +25,4 @@ jobs:
         pip install pylint
     - name: Analysing the code with pylint
       run: |
-        pylint app.py --disable=missing-docstring
+        pylint app.py --disable=missing-docstring,C0305

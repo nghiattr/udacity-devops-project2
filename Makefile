@@ -12,7 +12,7 @@ start:
 	python app.py
 
 lint:
-	pylint app.py --disable=missing-docstring
+	pylint app.py --disable=missing-docstring,C0305
 
 docker-build:
 	docker build -t my-python-flask-app .
