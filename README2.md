@@ -10,8 +10,8 @@ Purpose of this project is build and deploy a Flask Webapp based on several tool
 
 1. Create the virtual environment using python
 ```bash
-python -m venv flask-ml-azure
-source flask-ml-azure/Scripts/activate
+python3 -m venv flask-ml-azure
+source flask-ml-azure/bin/activate
 ```
 
 2. Install dependencies in requirement.txt file
@@ -19,12 +19,23 @@ source flask-ml-azure/Scripts/activate
 make install
 ```
 
-3. Start webapp
+3.1 Start webapp in local
 ```bash
-python app.py
+python3 app.py
 ```
 
-4. In a separate shell run: `./make_prediction.sh`
+
+4.1 In a separate shell run: `./make_prediction.sh`
+
+
+3.2 Create a Azure Web App service in Azure cloud shell
+```bash
+az webapp -n flask-nghia -g Azuredevops
+```
+
+
+4.2 In a separate shell run: `./make_predict_azure_app.sh`
+*Note: replace "< yourappname >" before executing.
 
 
 ## Link of the Trello board
