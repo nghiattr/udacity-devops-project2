@@ -28,9 +28,9 @@ python3 app.py
 4.1 In a separate shell run: `./make_prediction.sh`
 
 
-3.2 Create a Azure Web App service in Azure cloud shell
+3.2 Create a Azure Web App service in Azure cloud shell *Note: replace "< yourappname >" before executing.
 ```bash
-az webapp -n flask-nghia -g Azuredevops
+./commands.sh
 ```
 
 
