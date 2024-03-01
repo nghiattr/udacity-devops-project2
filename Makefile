@@ -1,15 +1,15 @@
 setup:
-	python -m venv flask-ml-azure
-	source flask-ml-azure/Scripts/activate
+	python3 -m venv flask-ml-azure
+	source flask-ml-azure/bin/activate
 	
 install:
 	pip install -r requirements.txt
 
 test:
-	python -m pytest -v test.py
+	python3 -m pytest -v test.py
 
 start:
-	python app.py
+	python3 app.py
 
 lint:
 	pylint app.py --disable=missing-docstring,C0305

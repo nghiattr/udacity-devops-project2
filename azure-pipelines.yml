@@ -54,8 +54,14 @@ stages:
     - script: |
         python -m venv antenv
         source antenv/bin/activate
-        echo "make install"
-        echo "make lint"
+        make test
+      workingDirectory: $(projectRoot)
+      displayName: 'Run py tests'
+
+    - script: |
+        python -m venv antenv
+        source antenv/bin/activate
+        make lint
       workingDirectory: $(projectRoot)
       displayName: 'Run lint tests'
 
