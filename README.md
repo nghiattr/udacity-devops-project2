@@ -133,6 +133,21 @@ For more details, please refer to the video links in the "Demo Links" section.
 
 [Trello Board Link](https://trello.com/b/ormxYoYZ/nghiaproject)
 
+| Task Description                                           | Quarter | Week | Estimated Time (hours) | Actual Time (hours) |
+|------------------------------------------------------------|---------|------|------------------------|----------------------|
+| Core DevOps Principles Documentation                       | Q1      | 1    | 10                     | 8                     |
+| Create Azure DevOps Project Estimate Document             | Q1      | 2    | 8                      | 8                     |
+| Set Up GitHub Repository                                  | Q1      | 3    | 4                      |  8                    |
+| Initial Codebase Setup                                    | Q1      | 3    | 6                      | 8                     |
+| Implement Continuous Integration with Azure Cloud Shell   | Q1      | 4    | 12                     | 8                     |
+| Use GitHub Actions for Continuous Integration             | Q2      | 5    | 10                     | 8                     |
+| Implement Continuous Delivery with Azure Pipelines       | Q2      | 6    | 14                     |  8                   |
+| Load Testing using Locust                                 | Q2      | 7    | 10                     | 8                     |
+| Deploy Application to Azure App Services using Azure CLI  | Q3      | 9    | 8                      |  8                    |
+| Test Application within Azure Pipelines                  | Q3      | 10   | 6                      |   8                   |
+| Documentation Refinement                                  | Q4      | 12   | 8                      | 8                     |
+| Create Professional Demo of Azure DevOps Application      | Q4      | 13   | 10                     | 8                     |
+
 
 ## Continuous Integration
 
