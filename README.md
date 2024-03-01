@@ -42,5 +42,5 @@ az webapp -n flask-nghia -g Azuredevops
 
 https://trello.com/b/ormxYoYZ/nghiaproject
 
-![Flask application test with Github Actions](https://github.com/nghiattr/udacity-devops-project2/actions/workflows/pylint.yml/badge.svg)
+![Flask application test with Github Actions](https://github.com/nghiattr/udacity-devops-project2/actions/workflows/pylint.yml/badge.svg?branch=azurepipline)
 
